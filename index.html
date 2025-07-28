@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Presença</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Confirme sua presença</h1>
+            <p class="subtitle">Estamos ansiosos para celebrar com você!</p>
+        </header>
+
+        <main class="main-content">
+            <div class="confirmation-card">
+                <div class="form-group">
+                    <label for="guest-name">Seu nome completo</label>
+                    <input type="text" id="guest-name" placeholder="Digite seu nome completo" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Você vai comparecer?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="attendance" value="yes" checked>
+                            <span class="radio-custom"></span>
+                            Sim, estarei lá!
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="attendance" value="no">
+                            <span class="radio-custom"></span>
+                            Infelizmente não poderei
+                        </label>
+                    </div>
+                </div>
+
+                <div id="additional-guests" class="additional-guests">
+                    <!-- Additional guests will be added here -->
+                </div>
+
+                <button id="add-guest-btn" class="btn secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M5 12h14"></path>
+                    </svg>
+                    Adicionar acompanhante
+                </button>
+
+                <button id="submit-btn" class="btn primary">Confirmar</button>
+            </div>
+        </main>
+    </div>
+
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <svg class="success-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <h2>Confirmação enviada!</h2>
+            <p>Sua presença foi confirmada com sucesso.</p>
+            <button id="close-modal" class="btn primary">Fechar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
