@@ -23,12 +23,14 @@ public class ConfirmationService : IConfirmationService
 
     public async Task<ConfirmationResponseDto> CreateConfirmationAsync(ConfirmationRequestDto request)
     {
+        var now = DateTime.UtcNow;
+        
         var confirmation = new Confirmation
         {
             MainGuestName = request.MainGuestName.Trim(),
             MainGuestAttending = request.MainGuestAttending,
-            CreatedAt = DateTime.UtcNow,
-            UpdatedAt = DateTime.UtcNow
+            CreatedAt = now,
+            UpdatedAt = now
         };
 
         _context.Confirmations.Add(confirmation);
@@ -42,7 +44,7 @@ public class ConfirmationService : IConfirmationService
                 ConfirmationId = confirmation.Id,
                 GuestName = guest.Name.Trim(),
                 Attending = guest.Attending,
-                CreatedAt = DateTime.UtcNow
+                CreatedAt = now
             }).ToList();
 
             _context.AdditionalGuests.AddRange(additionalGuests);

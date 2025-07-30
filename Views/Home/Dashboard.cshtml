@@ -3,8 +3,18 @@
 }
     <div class="container dashboard">
         <header class="header">
-            <h1 class="title">Painel de Confirmações</h1>
-            <p class="subtitle">Resumo das respostas recebidas</p>
+            <div class="dashboard-header">
+                <div>
+                    <h1 class="title">Painel de Confirmações</h1>
+                    <p class="subtitle">Resumo das respostas recebidas</p>
+                </div>
+                <div class="header-actions">
+                    <span class="user-info">Olá, @User.Identity?.Name</span>
+                    <button id="logout-btn" class="btn secondary logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Sair
+                    </button>
+                </div>
+            </div>
             <a href="/" class="btn secondary" style="margin-top: 1rem;">← Voltar para confirmação</a>
         </header>
 
@@ -48,3 +58,7 @@
             </div>
         </main>
     </div>
+
+@section Scripts {
+    <script src="~/js/dashboard.js"></script>
+}

@@ -23,7 +23,7 @@ public class AdditionalGuest
     public bool Attending { get; set; } = true;
 
     [Column("created_at")]
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public DateTime CreatedAt { get; set; }
 
     // Navigation property
     [ForeignKey("ConfirmationId")]
