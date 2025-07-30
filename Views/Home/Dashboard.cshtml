@@ -3,19 +3,21 @@
 }
     <div class="container dashboard">
         <header class="header">
-            <div class="dashboard-header">
-                <div>
-                    <h1 class="title">Painel de Confirmações</h1>
-                    <p class="subtitle">Resumo das respostas recebidas</p>
-                </div>
-                <div class="header-actions">
-                    <span class="user-info">Olá, @User.Identity?.Name</span>
-                    <button id="logout-btn" class="btn secondary logout-btn">
-                        <i class="fas fa-sign-out-alt"></i> Sair
+            <h1 class="title">Painel de Confirmações</h1>
+            <p class="subtitle">Resumo das respostas recebidas</p>
+            <div class="copy-link-container">
+                <label for="page-link">🔗 Link da página de confirmação</label>
+                <div class="link-input-group">
+                    <input type="text" id="page-link" value="http://localhost:5000/" readonly class="link-input">
+                    <button type="button" id="copy-link-btn" class="btn primary copy-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        Copiar
                     </button>
                 </div>
             </div>
-            <a href="/" class="btn secondary" style="margin-top: 1rem;">← Voltar para confirmação</a>
         </header>
 
         <main class="main-content">
@@ -31,6 +33,10 @@
                 <div class="stat-card total">
                     <h3>Total de convidados</h3>
                     <p id="total-count">0</p>
+                </div>
+                <div class="stat-card attending">
+                    <h3>Total de pessoas presentes</h3>
+                    <p id="total-attending-count">0</p>
                 </div>
             </div>
 
@@ -58,7 +64,3 @@
             </div>
         </main>
     </div>
-
-@section Scripts {
-    <script src="~/js/dashboard.js"></script>
-}

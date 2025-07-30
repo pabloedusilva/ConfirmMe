@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
 
 namespace ConfirmMe.Controllers;
 
@@ -10,7 +9,6 @@ public class HomeController : Controller
         return View();
     }
 
-    [Authorize]
     public IActionResult Dashboard()
     {
         return View();

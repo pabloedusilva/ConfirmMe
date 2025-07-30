@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
 using ConfirmMe.Models.DTOs;
 using ConfirmMe.Services;
 
@@ -36,7 +35,6 @@ public class ConfirmationsController : ControllerBase
     }
 
     [HttpGet]
-    [Authorize]
     public async Task<ActionResult<List<ConfirmationResponseDto>>> GetAllConfirmations()
     {
         try
@@ -51,7 +49,6 @@ public class ConfirmationsController : ControllerBase
     }
 
     [HttpGet("dashboard")]
-    [Authorize]
     public async Task<ActionResult<DashboardStatsDto>> GetDashboardStats()
     {
         try

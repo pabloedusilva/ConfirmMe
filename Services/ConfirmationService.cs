@@ -23,14 +23,12 @@ public class ConfirmationService : IConfirmationService
 
     public async Task<ConfirmationResponseDto> CreateConfirmationAsync(ConfirmationRequestDto request)
     {
-        var now = DateTime.UtcNow;
-        
         var confirmation = new Confirmation
         {
             MainGuestName = request.MainGuestName.Trim(),
             MainGuestAttending = request.MainGuestAttending,
-            CreatedAt = now,
-            UpdatedAt = now
+            CreatedAt = DateTime.UtcNow,
+            UpdatedAt = DateTime.UtcNow
         };
 
         _context.Confirmations.Add(confirmation);
@@ -44,7 +42,7 @@ public class ConfirmationService : IConfirmationService
                 ConfirmationId = confirmation.Id,
                 GuestName = guest.Name.Trim(),
                 Attending = guest.Attending,
-                CreatedAt = now
+                CreatedAt = DateTime.UtcNow
             }).ToList();
 
             _context.AdditionalGuests.AddRange(additionalGuests);
@@ -68,7 +66,10 @@ public class ConfirmationService : IConfirmationService
         {
             // Contar convidado principal
             if (confirmation.MainGuestAttending)
+            {
                 stats.ConfirmedCount++;
+                stats.TotalAttendingCount++;
+            }
             else
                 stats.DeclinedCount++;
 
@@ -78,7 +79,10 @@ public class ConfirmationService : IConfirmationService
             foreach (var guest in confirmation.AdditionalGuests)
             {
                 if (guest.Attending)
+                {
                     stats.ConfirmedCount++;
+                    stats.TotalAttendingCount++;
+                }
                 else
                     stats.DeclinedCount++;
 

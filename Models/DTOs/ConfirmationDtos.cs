@@ -27,6 +27,7 @@ public class DashboardStatsDto
     public int ConfirmedCount { get; set; }
     public int DeclinedCount { get; set; }
     public int TotalCount { get; set; }
+    public int TotalAttendingCount { get; set; }
     public List<GuestListDto> Guests { get; set; } = new();
 }
 

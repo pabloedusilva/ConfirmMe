@@ -2301,11 +2301,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Documents\\Projetos\\ConfirmMe\\ConfirmMe.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Documents\\ConfirmMe\\ConfirmMe.csproj",
       "projectName": "ConfirmMe",
-      "projectPath": "C:\\Users\\user\\Documents\\Projetos\\ConfirmMe\\ConfirmMe.csproj",
+      "projectPath": "C:\\Users\\user\\Documents\\ConfirmMe\\ConfirmMe.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Documents\\Projetos\\ConfirmMe\\obj\\",
+      "outputPath": "C:\\Users\\user\\Documents\\ConfirmMe\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
